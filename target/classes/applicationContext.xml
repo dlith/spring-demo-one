@@ -12,6 +12,7 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <context:component-scan base-package="com.dzmitry.springdemo" />
+    <context:property-placeholder location="classpath:sport.properties"/>
 
     <bean id="myFortuneService"
           class="com.dzmitry.springdemo.service.HappyFortuneService">
@@ -27,8 +28,10 @@
           class="com.dzmitry.springdemo.CricketCoach">
 
         <property name="fortuneService" ref="myFortuneService"/>
-        <property name="emailAddress" value="test@gmail.com"/>
-        <property name="team" value="Sunrises Hyderabad"/>
+<!--        <property name="emailAddress" value="test@gmail.com"/>-->
+<!--        <property name="team" value="Sunrises Hyderabad"/> -->
+        <property name="emailAddress" value="${foo.email}"/>
+        <property name="team" value="${foo.team}"/>
     </bean>
 
 </beans>
