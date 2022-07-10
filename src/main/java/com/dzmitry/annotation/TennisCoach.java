@@ -9,12 +9,12 @@ import org.springframework.stereotype.Component;
 @Component("theBeanNameTennisCoach")
 public class TennisCoach implements Coach {
 
-    @Autowired
-    @Qualifier("randomFortuneService")
+    //@Autowired
+    //@Qualifier("randomFortuneService")
     private FortuneService fortuneService;
 
-    //@Autowired
-    public TennisCoach(FortuneService fortuneService) {
+    @Autowired
+    public TennisCoach(@Qualifier("randomFortuneService") FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
 
