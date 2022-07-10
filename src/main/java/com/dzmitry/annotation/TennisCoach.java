@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 @Component("theBeanNameTennisCoach")
 public class TennisCoach implements Coach {
 
+    @Autowired
     private FortuneService fortuneService;
 
     //@Autowired
@@ -23,7 +24,7 @@ public class TennisCoach implements Coach {
         return fortuneService;
     }
 
-    @Autowired
+    //@Autowired
     public void setFortuneService(FortuneService fortuneService) {
         System.out.println(">> inside setter");
         this.fortuneService = fortuneService;
