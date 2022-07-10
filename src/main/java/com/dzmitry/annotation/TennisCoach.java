@@ -10,12 +10,23 @@ public class TennisCoach implements Coach {
 
     private FortuneService fortuneService;
 
-    @Autowired
+    //@Autowired
     public TennisCoach(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
 
     public TennisCoach() {
+        System.out.println(">> inside default constructor");
+    }
+
+    public FortuneService getFortuneService() {
+        return fortuneService;
+    }
+
+    @Autowired
+    public void setFortuneService(FortuneService fortuneService) {
+        System.out.println(">> inside setter");
+        this.fortuneService = fortuneService;
     }
 
     @Override
