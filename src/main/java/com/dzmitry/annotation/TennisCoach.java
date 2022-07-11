@@ -5,8 +5,6 @@ import com.dzmitry.springdemo.service.FortuneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.PostMapping;
-
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
@@ -28,12 +26,12 @@ public class TennisCoach implements Coach {
 
     @PostConstruct
     public void doSomePostConstruct(){
-        System.out.println(">> doSomePostConstruct");
+        System.out.println(">> doSomePostConstruct TennisCoach");
     }
 
     @PreDestroy
     public void doSomePreDestroy(){
-        System.out.println(">> doSomePreDestroy");
+        System.out.println(">> doSomePreDestroy TennisCoach");
     }
 
     public FortuneService getFortuneService() {
